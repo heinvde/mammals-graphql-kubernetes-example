@@ -1,0 +1,49 @@
+# Queries
+
+type Query {
+  mammal(id: ID!): Mammal!,
+  mammals: [Mammal!]!
+}
+
+# Common types
+
+interface Identifiable {
+  id: ID!
+}
+
+# Types
+
+type Mammal implements Identifiable {
+  id: ID!,
+  commonName: String!,
+  scientificName: String!,
+  status: String!,
+  lastSeen: String!,
+  count: Int!
+}
+
+# Input types
+
+input MammalCreateInput {
+  commonName: String!,
+  scientificName: String!,
+  status: String!,
+  lastSeen: String!,
+  count: Int!
+}
+
+input MammalUpdateInput {
+  commonName: String,
+  scientificName: String,
+  status: String,
+  lastSeen: String,
+  count: Int
+}
+
+# Mutations
+
+type Mutation {
+  # Mammal
+  createMammal(input: MammalCreateInput): Mammal,
+  updateMammal(id: ID!, input: MammalUpdateInput): Mammal
+}

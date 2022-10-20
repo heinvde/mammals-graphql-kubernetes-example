@@ -1,0 +1,23 @@
+{
+  "name": "tinybackpack-graphql",
+  "version": "1.0.0",
+  "description": "GraphQL API of the Tiny Backpack system",
+  "main": "index.js",
+  "scripts": {
+    "prettier": "prettier --config .prettierrc --write ./libs",
+    "lint": "eslint --config .eslintrc.json ./libs/**"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.2",
+    "express-graphql": "^0.12.0",
+    "graphql": "^16.3.0",
+    "node-fetch": "^2.6.7"
+  },
+  "devDependencies": {
+    "eslint": "^8.25.0",
+    "prettier": "^2.7.1"
+  }
+}
