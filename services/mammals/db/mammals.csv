@@ -1,0 +1,68 @@
+id,commonName,scientificName,status,lastSeen,count
+id-0001,Impala,Aepyceros melampus melampus,Least Concern,2022-10-10,15000
+id-0002,Red Hartebeest,Alcelaphus buselaphus caama,Least Concern,2022-10-12,5000
+id-0003,Lichtenstein's Hartebeest,Alcelaphus buselaphus lichtensteinii,Not Evaluated,2022-10-10,2000
+id-0004,Springbok,Antidorcas marsupialis,Least Concern,2022-10-10,15000
+id-0005,Natal Red Duiker,Cephalophus natalensis,Near Threatened,2022-10-10,4000
+id-0006,Black Wildebeest,Connochaetes gnou,Least Concern,2022-10-10,2000
+id-0007,Blue Wildebeest,Connochaetes taurinus taurinus,Least Concern,2022-10-10,8000
+id-0008,Tsessebe,Damaliscus lunatus lunatus,Vulnerable,2022-10-10,2000
+id-0009,Blesbok,Damaliscus pygargus phillipsi,Least Concern,2022-10-12,2500
+id-0010,Bontebok,Damaliscus pygargus pygargus,Vulnerable,2022-10-10,3000
+id-0011,South African Giraffe,Giraffa camelopardalis giraffa,Least Concern,2022-10-10,4000
+id-0012,Hippopotamus,Hippopotamus amphibius,Least Concern,2022-10-10,1500
+id-0013,Roan Antelope,Hippotragus equinus,Endangered,2022-10-10,1200
+id-0014,Sable Antelope,Hippotragus niger niger,Vulnerable,2022-10-10,1000
+id-0015,Common Waterbuck,Kobus ellipsiprymnus ellipsiprymnus,Least Concern,2022-10-10,4000
+id-0016,Suni,Nesotragus moschatus zuluensis,Endangered,2022-10-10,800
+id-0017,Klipspringer,Oreotragus oreotragus,Least Concern,2022-10-10,8000
+id-0018,Gemsbok,Oryx gazella,Least Concern,2022-10-10,3000
+id-0019,Oribi,Ourebia ourebi ourebi,Endangered,2022-10-09,2500
+id-0020,Grey Rhebok,Pelea capreolus,Near Threatened,2022-10-10,2500
+id-0021,Common Warthog,Phacochoerus africanus,Least Concern,2022-10-10,3000
+id-0022,Bushpig,Potamochoerus larvatus,Least Concern,2022-10-10,800
+id-0023,Blue Duiker,Philantomba monticola,Vulnerable,2022-10-09,200
+id-0024,Steenbok,Raphicerus campestris,Least Concern,2022-10-10,5000
+id-0025,Cape Grysbok,Raphicerus melanotis,Least Concern,2022-10-10,600
+id-0026,Sharpe's Grysbok,Raphicerus sharpei,Least Concern,2022-10-10,6000
+id-0027,Southern Reedbuck,Redunca arundinum,Least Concern,2022-10-10,2800
+id-0028,Common Duiker,Sylvicapra grimmia,Least Concern,2022-10-10,12000
+id-0029,Southern Savannah Buffalo,Syncerus caffer caffer,Least Concern,2022-10-10,8000
+id-0030,Eland,Tragelaphus oryx,Least Concern,2022-10-10,1500
+id-0031,Greater Kudu,Tragelaphus strepsiceros,Least Concern,2022-10-10,4000
+id-0032,Southern Bushbuck,Tragelaphus sylvaticus,Least Concern,2022-10-10,1500
+id-0033,Cheetah,Acinonyx jubatus,Vulnerable,2022-10-10,1200
+id-0034,Cape Clawless Otter,Aonyx capensis,Near Threatened,2022-10-10,1000
+id-0035,Water Mongoose,Atilax paludinosus,Least Concern,2022-10-10,800
+id-0036,Side-striped Jackal,Canis adustus,Least Concern,2022-10-12,400
+id-0037,Black-backed Jackal,Canis mesomelas,Least Concern,2022-10-10,2300
+id-0038,Caracal,Caracal caracal,Least Concern,2022-10-10,200
+id-0039,African Civet,Civettictis civetta,Least Concern,2022-10-10,600
+id-0040,Spotted Hyaena,Crocuta crocuta,Near Threatened,2022-10-10,6000
+id-0041,Yellow Mongoose,Cynictis penicillata,Least Concern,2022-10-10,10000
+id-0042,Black-footed Cat,Felis nigripes,Vulnerable,2022-10-10,20
+id-0043,African Wildcat,Felis silvestris,Least Concern,2022-10-10,400
+id-0044,Small-spotted Genet,Genetta genetta,Least Concern,2022-10-10,1500
+id-0045,Rusty-spotted Genet,Genetta maculata,Least Concern,2022-10-10,300
+id-0046,Cape Genet,Genetta tigrina,Least Concern,2022-10-10,1500
+id-0047,Dwarf Mongoose,Helogale parvula,Least Concern,2022-10-10,6000
+id-0048,Brown Hyaena,Parahyaena brunnea,Near Threatened,2022-10-10,400
+id-0049,White-tailed Mongoose,Ichneumia albicauda,Least Concern,2022-10-12,300
+id-0050,Serval,Leptailurus serval,Near Threatened,2022-10-10,45
+id-0051,Spotted-necked Otter,Hydrictis maculicollis,Vulnerable,2022-10-10,500
+id-0052,African Wild Dog,Lycaon pictus,Endangered,2022-10-10,1200
+id-0053,Honey Badger,Mellivora capensis,Least Concern,2022-10-10,800
+id-0054,Banded Mongoose,Mungos mungo,Least Concern,2022-10-10,600
+id-0055,Bat-eared Fox,Otocyon megalotis,Least Concern,2022-10-10,150
+id-0056,Lion,Panthera leo,Least Concern,2022-10-10,1750
+id-0057,Leopard,Panthera pardus,Vulnerable,2022-10-10,1100
+id-0058,Selous' Mongoose,Paracynictis selousi,Least Concern,2022-10-10,120
+id-0059,African Striped Weasel,Poecilogale albinucha,Near Threatened,2022-10-10,20
+id-0060,Aardwolf,Proteles cristata,Least Concern,2022-10-10,140
+id-0061,Suricate,Suricata suricatta,Least Concern,2022-10-10,2200
+id-0062,Cape Fox,Vulpes chama,Least Concern,2022-10-10,200
+id-0063,Samango Monkey,Cercopithecus albogularis,Vulnerable,2022-10-09,160
+id-0064,Vervet Monkey,Chlorocebus pygerythrus,Least Concern,2022-10-10,2300
+id-0065,Thick-tailed Bushbaby,Otolemur crassicaudatus,Least Concern,2022-10-09,2600
+id-0066,Chacma Baboon,Papio ursinus,Least Concern,2022-10-10,4000
+id-0067,African Elephant,Loxodonta africana,Least Concern,2022-10-09,6000
