@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, make_response
 from libs.exceptions import NotFoundException
 from libs.config import Config
 import json, os
@@ -15,12 +15,16 @@ config.setup(app)
 
 @app.route("/")
 def ping():
-    return { 'message': 'Pong!' }
+    response = make_response({ 'message': 'Pong!' }, 200)
+    response.mimetype = "application/json"
+    return response
 
 @app.route("/mammals")
 def get_mammals():
     mammals = queries.get_mammals(app)
-    return json.dumps(mammals)
+    response = make_response(mammals, 200)
+    response.mimetype = "application/json"
+    return response
 
 @app.route("/mammals/<mammal_id>")
 def get_mammal_by_id(mammal_id):
@@ -28,12 +32,16 @@ def get_mammal_by_id(mammal_id):
     if(mammal == None):
         raise NotFoundException("Mammal not found")
 
-    return json.dumps(mammal)
+    response = make_response(mammal, 200)
+    response.mimetype = "application/json"
+    return response
 
 # Errors
 @app.errorhandler(NotFoundException)
 def handle_bad_request(e):
-    return 'Not Found', 404
+    response = make_response('Not Found', 404)
+    response.mimetype = "text/plain"
+    return response
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0')
