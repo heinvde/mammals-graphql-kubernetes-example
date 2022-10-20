@@ -1,0 +1,1 @@
+# mammals-graphql-kubernetes-example
