@@ -1,7 +1,7 @@
 {
-  "name": "tinybackpack-graphql",
+  "name": "mammals-graphql",
   "version": "1.0.0",
-  "description": "GraphQL API of the Tiny Backpack system",
+  "description": "GraphQL API of the Mammals project",
   "main": "index.js",
   "scripts": {
     "prettier": "prettier --config .prettierrc --write ./libs",

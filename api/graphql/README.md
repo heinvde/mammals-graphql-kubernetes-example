@@ -1,4 +1,4 @@
-## Tinybackpack GraphQL API
+## Mammals GraphQL API
 
 This service contains the exposed graphql API that connects to the other services
 

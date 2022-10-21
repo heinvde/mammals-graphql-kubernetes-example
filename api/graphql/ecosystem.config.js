@@ -1,6 +1,6 @@
 module.exports = {
   apps: [{
-    name : "tinybackpack-graphql",
+    name : "mammals-graphql",
     script: "./index.js",
     watch: ["./"],
     ignoreWatch: ["node_modules"]
