@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   mammals-graphql-api:
-    image: heinvde.tinybackpack/graphql-api:1.0.0
+    image: localhost:5000/mammals-graphql-api:1.0.0
     build: .
     command: pm2-runtime start ecosystem.config.js --no-auto-exit
     environment:
@@ -14,13 +14,13 @@ services:
       - .:/usr/app
 
   query-mammals-service:
-    image: heinvde.mammals/query-mammals-service:1.0.0
+    image: localhost:5000/query-mammals-service:1.0.0
     environment:
       ENVIRONMENT: dev
       MAMMALS_MONGO_CONN_STRING: mongodb://mammals-mongo:27017
 
   mutate-mammals-validator:
-    image: heinvde.mammals/mutate-mammals-validator:1.0.0
+    image: localhost:5000/mutate-mammals-validator:1.0.0
     environment:
       ENVIRONMENT: dev
       VALIDATOR_PORT: 5001
@@ -28,11 +28,11 @@ services:
       APP_PORT: 5000
 
   mutate-mammals-service:
-    image: heinvde.mammals/mutate-mammals-service:1.0.0
+    image: localhost:5000/mutate-mammals-service:1.0.0
     environment:
       ENVIRONMENT: dev
       MAMMALS_MONGO_CONN_STRING: mongodb://mammals-mongo:27017
 
   mammals-mongo:
-    image: heinvde.mammals/mongo:1.0.0
+    image: localhost:5000/heinvde-mammals-mongo:1.0.0
     command: mongod --quiet --logpath /dev/null

@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   query-mammals-service:
-    image: heinvde.mammals/query-mammals-service:1.0.0
+    image: localhost:5000/query-mammals-service:1.0.0
     build:
       context: ./app
     command: flask --app ./app/main.py --debug run --host 0.0.0.0
@@ -15,5 +15,5 @@ services:
       MAMMALS_MONGO_CONN_STRING: mongodb://mammals-mongo:27017
 
   mammals-mongo:
-    image: heinvde.mammals/mongo:1.0.0
+    image: localhost:5000/mongo:1.0.0
     command: mongod --quiet --logpath /dev/null
