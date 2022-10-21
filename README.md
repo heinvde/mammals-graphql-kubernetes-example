@@ -68,9 +68,16 @@ To run the graphql API using through the ingress controller you need to update t
 
 To run this API with kind locally you have to setup an NGINX ingress according to [this](https://kind.sigs.k8s.io/docs/user/ingress/#ingress-nginx) and then run the deploy script.
 
+To run the graphql API using through the ingress controller you need to update the hosts file to include the following lines (for linux)
+```bash
+# /etc/hosts
+127.0.0.1    heinvde-staging.mammals
+127.0.0.1    heinvde.mammals
+```
+
 ## Services and API
 
-The API and Services can be run and tested separately by referring the each ones readme.
+The API and Services can run and be tested separately by referring the each README.
 
  - [GraphQL API](api/graphql//README.md)
  - [Query Mammal Service](services/mammals/query-mammals/README.md)
