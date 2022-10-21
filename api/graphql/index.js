@@ -1,10 +1,9 @@
-
 const express = require('express');
 const { graphqlHTTP } = require('express-graphql');
 const { buildSchema, GraphQLError } = require('graphql');
 const { root, schema } = require('./graphql/schema');
 const { Context } = require('./libs/utils/context');
-const { Request } = require('./libs/utils/request')
+const { Request } = require('./libs/utils/request');
 const cors = require('cors');
 
 const print = (...m) => console.log(...m);
@@ -25,31 +24,32 @@ const context = new Context({
 const port = 8077;
 const app = express();
 
-app.use(cors())
+app.use(cors());
 
-app.use("/ping", (_, res) => res.send("pong"))
+app.use('/ping', (_, res) => res.send('pong'));
 
-app.use("/graphql", graphqlHTTP({
-  schema:    buildSchema(schema),
-  rootValue: root,
-  graphiql:  true,
-  pretty:    true,
-  context:   context,
-  customFormatErrorFn: (err) => {
-    console.error(err);
-    if(err instanceof GraphQLError) {
-      err.extensions = {
-        statusCode: 400
+app.use(
+  '/graphql',
+  graphqlHTTP({
+    schema: buildSchema(schema),
+    rootValue: root,
+    graphiql: true,
+    pretty: true,
+    context: context,
+    customFormatErrorFn: err => {
+      console.error(err);
+      if (err instanceof GraphQLError) {
+        err.extensions = {
+          statusCode: 400
+        };
+
+        return err;
       }
 
-      return err;
+      return [{ statusCode: 500, data: 'Internal server error' }];
     }
-
-    return [
-      { statusCode: 500, data: "Internal server error"}
-    ]
-  }
-}))
+  })
+);
 
 app.listen(port);
 

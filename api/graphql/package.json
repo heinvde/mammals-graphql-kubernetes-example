@@ -4,8 +4,8 @@
   "description": "GraphQL API of the Mammals project",
   "main": "index.js",
   "scripts": {
-    "prettier": "prettier --config .prettierrc --write ./libs",
-    "lint": "eslint --config .eslintrc.json ./libs/**"
+    "prettier": "prettier --config .prettierrc --write ./libs index.js",
+    "lint": "eslint --config .eslintrc.json ./libs/** index.js"
   },
   "author": "",
   "license": "ISC",
