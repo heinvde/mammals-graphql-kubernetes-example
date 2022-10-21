@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: graphql-api
+spec:
+  replicas: 4
+  strategy:
+    rollingUpdate:
+      maxUnavailable: 2
+    type: RollingUpdate
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: query-mammals
+spec:
+  replicas: 4
+  strategy:
+    rollingUpdate:
+      maxUnavailable: 2
+    type: RollingUpdate
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mutate-mammals
+spec:
+  replicas: 2
+  strategy:
+    rollingUpdate:
+      maxUnavailable: 1
+    type: RollingUpdate

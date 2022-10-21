@@ -1,0 +1,65 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: graphql-api
+  labels:
+    service: graphql
+    tier: api
+spec:
+  selector:
+    service: graphql
+    tier: api
+  ports:
+  - port: 80
+    targetPort: 8077
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: query-mammals
+  labels:
+    service: query-mammals
+    tier: backend
+spec:
+  selector:
+    service: query-mammals
+    tier: backend
+  ports:
+  - port: 80
+    targetPort: 5000
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: mutate-mammals
+  labels:
+    service: mutate-mammals
+    tier: backend
+spec:
+  selector:
+    service: mutate-mammals
+    tier: backend
+  ports:
+  - port: 80
+    targetPort: 5001
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: mammals-mongo
+  labels:
+    service: mammals-mongo
+    tier: backend
+spec:
+  selector:
+    service: mammals-mongo
+    tier: backend
+  ports:
+  - port: 27017
+    targetPort: 27017

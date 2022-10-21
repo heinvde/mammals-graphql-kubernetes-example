@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: mammals-ingress
+spec:
+  rules:
+  - host: heinvde-staging.mammals
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/graphql"
+        backend:
+          service:
+            name: graphql-api
+            port:
+              number: 80
