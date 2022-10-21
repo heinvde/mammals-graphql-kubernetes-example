@@ -7,17 +7,31 @@ This is a simple service with a python app and nodejs validator responsible for 
  - Docker
  - Docker-compose
 
+### Building and publishing
+
+To build the image
+
+```bash
+$ ./build.sh
+```
+
+To publish the image
+
+```bash
+$ ./publish.sh
+```
+
 ### Running the service
 
-You can run a local version by spinning up the docker container.
+You can run a local version by spinning up the docker container. First make sure the database image has been built and published, see [here](../db/README.md#building-and-publishing).
 
-First build the container
+Then build this container
 
 ```bash
 $ docker-compose build
 ```
 
-And then create the container
+And then create the containers
 ```bash
 $ docker-compose up
 ```

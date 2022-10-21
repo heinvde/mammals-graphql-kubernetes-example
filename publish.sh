@@ -1,6 +1,6 @@
 #!/bin/bash
 
-docker-compose -f services/mammals/db/docker-compose.yml push
-docker-compose -f services/mammals/mutate-mammals/docker-compose.yml push
-docker-compose -f services/mammals/query-mammals/docker-compose.yml push
-docker-compose -f api/graphql/docker-compose.yml push
+(cd services/mammals/db && ./publish.sh)
+(cd services/mammals/mutate-mammals && ./publish.sh)
+(cd services/mammals/query-mammals && ./publish.sh)
+(cd api/graphql && ./publish.sh)

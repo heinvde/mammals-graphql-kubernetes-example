@@ -7,7 +7,21 @@ This service contains the exposed graphql API that connects to the other service
   - Docker
   - Docker-compose
 
-### Building
+### Building and publishing
+
+To build the image
+
+```bash
+$ ./build.sh
+```
+
+To publish the image
+
+```bash
+$ ./publish.sh
+```
+
+### Linting and testing
 
 Intall packages for Node 12.x
 
@@ -22,19 +36,13 @@ npm run prettier
 npm run esline
 ```
 
-Build and tag the image
-
-```bash
-$ docker-compose build
-```
-
 ### Running the service locally
 
-Make sure the other services has been built, in the root folder run
+Make sure the other services has been built and published
 
-```bash
-$ ./build-images.sh
-```
+ - [Database service](../../services//mammals/db/README.md#building-and-publishing)
+ - [Query service](../../services//mammals/query-mammals/README.md#building-and-publishing)
+ - [Mutate service](../../services//mammals/mutate-mammals/README.md#building-and-publishing)
 
 You can run a local version by spinning up the docker container after it has been built.
 
