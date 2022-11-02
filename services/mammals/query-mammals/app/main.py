@@ -1,4 +1,4 @@
-from flask import Flask, make_response
+from flask import Flask, make_response, request
 from libs.exceptions import NotFoundException
 from libs.config import Config
 import json, os
@@ -10,6 +10,14 @@ app = Flask(__name__)
 env = os.environ['ENVIRONMENT']
 config = Config(env)
 config.setup(app)
+
+# Middleware
+@app.before_request
+def hook():
+    # Set correlation id for request
+    app.config['CORRELATION_ID'] = request.headers.get('Correlation-Id')
+    # Log request correlation id
+    app.logger.info(f"Correlation ID: {app.config['CORRELATION_ID']}")
 
 # Routes
 

@@ -2,7 +2,7 @@
 
 Very simple project showcasing the basic concepts of a Kubernetes micro service architecture that is set up using Kustomize Kubernetes configuration files found in the [kubernetes](kubernetes/) folder with `dev` and `prod` example environments.
 
-The project has basic CRUD operations for mutating and quering documents containing information of mammals in South Africa.
+The project has basic CRUD operations for mutating and quering documents containing information of mammals in South Africa. **NOTE** This isn't necessarily the approach I would use for creating an architecture for an application like this (E.g. two services using one db, etc.), it is only an example to illustrate my basic understanding of some fundamental concepts.
 
 This kubernetes set up uses the following base concepts:
  - Pod with one container

@@ -7,7 +7,7 @@ services:
       context: ./app
     command: flask --app ./app/main.py --debug run --host 0.0.0.0
     ports:
-      - 5000:5000
+      - 4000:5000
     volumes:
       - .:/app
     environment:
@@ -15,5 +15,5 @@ services:
       MAMMALS_MONGO_CONN_STRING: mongodb://mammals-mongo:27017
 
   mammals-mongo:
-    image: localhost:5000/mongo:1.0.0
+    image: localhost:5000/heinvde-mammals-mongo:1.0.0
     command: mongod --quiet --logpath /dev/null

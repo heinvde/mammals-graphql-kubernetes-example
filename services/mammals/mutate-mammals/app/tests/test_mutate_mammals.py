@@ -2,7 +2,7 @@ import requests, json
 
 def get_endpoint(path):
     host = 'localhost'
-    port = '5001'
+    port = '4001'
     return f'http://{host}:{port}/{path}'
 
 def test_happy_path_create_mammal():
@@ -10,7 +10,10 @@ def test_happy_path_create_mammal():
     endpoint = get_endpoint('mammals')
     response = requests.post(
         endpoint,
-        headers={ 'Content-type': 'application/json' },
+        headers={
+            'Content-type': 'application/json',
+            'Correlation-Id': 'corr-1234'
+        },
         data=json.dumps({
             'commonName': 'Vervet Monkey',
             'scientificName': 'Chlorocebus pygerythrus',
@@ -29,7 +32,10 @@ def test_happy_path_update_mammal():
     endpoint = get_endpoint('mammals/id-0001')
     response = requests.put(
         endpoint,
-        headers={ 'Content-type': 'application/json' },
+        headers={
+            'Content-type': 'application/json',
+            'Correlation-Id': 'corr-1234'
+        },
         data=json.dumps({
             'status': 'Vulnerable'
         })
@@ -44,7 +50,10 @@ def test_fail_update_mammal_not_found():
     endpoint = get_endpoint('mammals/not-valid')
     response = requests.put(
         endpoint,
-        headers={ 'Content-type': 'application/json' },
+        headers={
+            'Content-type': 'application/json',
+            'Correlation-Id': 'corr-1234'
+        },
         data=json.dumps({
             'status': 'Vulnerable'
         })

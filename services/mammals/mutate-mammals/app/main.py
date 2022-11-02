@@ -11,6 +11,14 @@ env = os.environ['ENVIRONMENT']
 config = Config(env)
 config.setup(app)
 
+# Middleware
+@app.before_request
+def hook():
+    # Set correlation id for request
+    app.config['CORRELATION_ID'] = request.headers.get('Correlation-Id')
+    # Log request correlation id
+    app.logger.info(f"Correlation ID: {app.config['CORRELATION_ID']}")
+
 # Routes
 
 @app.route('/ping')
