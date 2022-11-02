@@ -1,3 +1,5 @@
+const headersHelper = require('../helpers/headers')
+
 module.exports = {
   // Queries
 
@@ -9,7 +11,8 @@ module.exports = {
 
     const apiUrl = config.QUERY_MAMMALS_SERVICE_HOST;
     const endpoint = `${apiUrl}/mammals/${id}`;
-    const result = await request.get(endpoint);
+    const headers = headersHelper.addCorrelationId(context);
+    const result = await request.get(endpoint, headers);
 
     return result;
   },
@@ -22,8 +25,9 @@ module.exports = {
 
     const apiUrl = config.QUERY_MAMMALS_SERVICE_HOST;
     const endpoint = `${apiUrl}/mammals`;
+    const headers = headersHelper.addCorrelationId(context);
 
-    const result = await request.get(endpoint);
+    const result = await request.get(endpoint, headers);
 
     return result;
   },
@@ -38,8 +42,9 @@ module.exports = {
 
     const apiUrl = config.MUTATE_MAMMALS_SERVICE_HOST;
     const endpoint = `${apiUrl}/mammals`;
+    const headers = headersHelper.addCorrelationId(context);
 
-    const result = await request.post(endpoint, mammal);
+    const result = await request.post(endpoint, mammal, headers);
 
     return result;
   },
@@ -52,8 +57,9 @@ module.exports = {
 
     const apiUrl = config.MUTATE_MAMMALS_SERVICE_HOST;
     const endpoint = `${apiUrl}/mammals/${id}`;
+    const headers = headersHelper.addCorrelationId(context);
 
-    const result = await request.put(endpoint, mammal);
+    const result = await request.put(endpoint, mammal, headers);
 
     return result;
   }

@@ -6,4 +6,11 @@ class Context {
   }
 }
 
-module.exports = { Context };
+function fromContext(context) {
+  const { request, logger, config } = context
+  return new Context({
+    request, logger, config
+  })
+}
+
+module.exports = { Context, fromContext };

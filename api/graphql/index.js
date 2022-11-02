@@ -2,9 +2,10 @@ const express = require('express');
 const { graphqlHTTP } = require('express-graphql');
 const { buildSchema, GraphQLError } = require('graphql');
 const { root, schema } = require('./graphql/schema');
-const { Context } = require('./libs/utils/context');
+const { Context, fromContext } = require('./libs/utils/context');
 const { Request } = require('./libs/utils/request');
 const cors = require('cors');
+const { v4: uuidv4 } = require('uuid');
 
 const print = (...m) => console.log(...m);
 
@@ -30,23 +31,30 @@ app.use('/ping', (_, res) => res.send('pong'));
 
 app.use(
   '/graphql',
-  graphqlHTTP({
-    schema: buildSchema(schema),
-    rootValue: root,
-    graphiql: true,
-    pretty: true,
-    context: context,
-    customFormatErrorFn: err => {
-      console.error(err);
-      if (err instanceof GraphQLError) {
-        err.extensions = {
-          statusCode: 400
-        };
+  graphqlHTTP((req, res, params) => {
+    // Construct correlation id
+    const correlationId = uuidv4()
+    const uniqueContext = fromContext(context);
+    uniqueContext.config['correlationId'] = correlationId;
+    // Create graphql middleware
+    return {
+      schema: buildSchema(schema),
+      rootValue: root,
+      graphiql: true,
+      pretty: true,
+      context: uniqueContext,
+      customFormatErrorFn: err => {
+        console.error(err);
+        if (err instanceof GraphQLError) {
+          err.extensions = {
+            statusCode: 400
+          };
 
-        return err;
+          return err;
+        }
+
+        return [{ statusCode: 500, data: 'Internal server error' }];
       }
-
-      return [{ statusCode: 500, data: 'Internal server error' }];
     }
   })
 );
